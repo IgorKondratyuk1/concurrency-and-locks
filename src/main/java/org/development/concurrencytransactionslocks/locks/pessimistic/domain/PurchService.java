@@ -26,11 +26,7 @@ class PurchService {
 
     public PurchPL doPurch(PurchDto purchDto) {
         System.out.println("PurchServicePessimisticLock doPurch");
-        Optional<WalletPL> walletPLOptional = this.walletRepository.findById(purchDto.getWalletId());
-        if (walletPLOptional.isEmpty()) {
-            throw new RuntimeException("Empty optional walletPLOptional");
-        }
-        WalletPL wallet = walletPLOptional.get();
+        WalletPL wallet = this.walletRepository.findById(purchDto.getWalletId()).orElseThrow(() -> new RuntimeException("Empty optional walletPLOptional"));
 
         if (wallet.getSum() < purchDto.getPrice()) {
             throw new RuntimeException("No money for purch " + purchDto.getPrice() + " in wallet only: " + wallet.getSum());
