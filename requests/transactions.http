@@ -1,0 +1,27 @@
+### Create
+POST localhost:8080/api/transaction/wallet
+
+
+### Get all
+GET localhost:8080/api/transaction/wallet/all/1
+
+
+### Purch not-transactional
+POST localhost:8080/api/transaction/purchase/not-transactional
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "price": 10,
+  "walletId": 1
+}
+
+### Purch transactional
+POST localhost:8080/api/transaction/purchase/transactional
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "price": 10,
+  "walletId": 1
+}

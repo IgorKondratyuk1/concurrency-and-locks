@@ -1,0 +1,17 @@
+### Create
+POST localhost:8080/api/race-condition/wallet
+
+
+### Get all
+GET localhost:8080/api/race-condition/wallet/all/1
+
+
+### Purch
+POST localhost:8080/api/race-condition/purchase
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "price": 1,
+  "walletId": 1
+}

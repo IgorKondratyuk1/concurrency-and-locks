@@ -1,0 +1,17 @@
+### Create
+POST localhost:8080/api/optimistic-lock/wallet
+
+
+### Get all
+GET localhost:8080/api/optimistic-lock/wallet/all/1
+
+
+### Purch
+POST localhost:8080/api/optimistic-lock/purchase
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "price": 1,
+  "walletId": 1
+}
